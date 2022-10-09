@@ -36,7 +36,8 @@ class MyAlexNet(nn.Module):
 
     def forward(self, x):
         x = self.features_extract(x)
-        x = torch.flatten(x, 1)
+        # x = torch.flatten(x, 1)
+        x = torch.flatten(x, 0)
         # x = x.view(x.shape[0], -1)
         # print(x.shape)
         x = self.classifier(x)
